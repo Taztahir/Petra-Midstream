@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-bg-main: var(--bg-main);
+  --color-bg-alt: var(--bg-alt);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-light: var(--text-light);
+  --color-border-custom: var(--border-custom);
+}
+
+:root {
+  --primary: #0f172a;
+  /* Deep slate blue */
+  --primary-dark: #090d16;
+  /* Deeper dark blue */
+  --accent: #f97316;
+  /* Petra energy orange */
+  --accent-hover: #ea580c;
+  /* Warm orange hover state */
+  --bg-main: #ffffff;
+  /* Main white background */
+  --bg-alt: #f8fafc;
+  /* Off-white light background */
+  --text-main: #0f172a;
+  /* Dark slate for high readability */
+  --text-muted: #475569;
+  /* Muted slate for body details */
+  --text-light: #f8fafc;
+  /* Contrast white text */
+  --border-custom: #e2e8f0;
+  /* Soft borders */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+  }
+
+  .montserrat-font {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Accessibility: respect user preferences for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+}
