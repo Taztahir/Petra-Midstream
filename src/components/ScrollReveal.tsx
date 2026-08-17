@@ -5,6 +5,7 @@ interface ScrollRevealProps {
   delayMs?: number;
   durationMs?: number;
   distancePx?: number;
+  className?: string; // Added optional className prop
 }
 
 /**
@@ -16,6 +17,7 @@ export default function ScrollReveal({
   delayMs = 0,
   durationMs = 800,
   distancePx = 30,
+  className = '', // Default to empty string
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -60,7 +62,7 @@ export default function ScrollReveal({
   };
 
   return (
-    <div ref={ref} style={style}>
+    <div ref={ref} style={style} className={className}>
       {children}
     </div>
   );
